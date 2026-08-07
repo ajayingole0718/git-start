@@ -1,0 +1,16 @@
+It looks like your terminal is completely back to normal and working fine now.
+However, your prompt still shows ajay@Inspiron:~/Desktop/GitStartup/git-journey$, which means the Git branch name is still hidden.
+Let's turn it on right now using the easiest, safest method that does not require editing any files manually.
+## Step 1: Run these commands
+Copy and paste these three commands into your terminal one by one and press Enter:
+
+echo "source /usr/lib/git-core/git-sh-prompt" >> ~/.bashrc
+
+echo "export PS1='\[\e[32m\]\u@\h\[\e[m\]:\[\e[34m\]\w\[\e[m\]\[\e[33m\]\$(__git_ps1 \" (%s)\")\[\e[m\]\$ '" >> ~/.bashrc
+
+source ~/.bashrc
+
+## Step 2: Look at your prompt
+As soon as you run that last source command, your terminal prompt will instantly change to look exactly like this:
+ajay@Inspiron:~/Desktop/GitStartup/git-journey (main)$
+------------------------------
